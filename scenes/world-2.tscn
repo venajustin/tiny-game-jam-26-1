@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://qujvevy44ewc"]
+
+[ext_resource type="PackedScene" uid="uid://tgcqdm0qhtax" path="res://scenes/player.tscn" id="1_ba2of"]
+[ext_resource type="PackedScene" uid="uid://dj8gpc0lh7nyg" path="res://Assets/Map1.blend" id="2_ba2of"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fkud"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_kfcj1"]
+sky_material = SubResource("ProceduralSkyMaterial_3fkud")
+
+[sub_resource type="Environment" id="Environment_oh5ts"]
+background_mode = 2
+sky = SubResource("Sky_kfcj1")
+tonemap_mode = 2
+
+[node name="World" type="Node3D" unique_id=1713739871]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1904100454]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_split_1 = 0.09
+directional_shadow_max_distance = 223.2
+directional_shadow_pancake_size = 146.4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=900489049]
+environment = SubResource("Environment_oh5ts")
+
+[node name="Player" parent="." unique_id=1827467941 node_paths=PackedStringArray("world") groups=["shoot-through"] instance=ExtResource("1_ba2of")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41959572, 3.7673588, -0.45244408)
+world = NodePath("..")
+
+[node name="Map1" parent="." unique_id=1999320353 instance=ExtResource("2_ba2of")]
