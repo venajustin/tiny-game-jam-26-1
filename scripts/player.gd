@@ -22,7 +22,7 @@ const MOUSE_SENSITIVITY = -.003
 @onready var cam_look_target = $CameraLookPivot/CameraLookTarget
 @onready var cam_target = $CameraPivot/CameraTarget
 @onready var cam:Camera3D = $CameraPivot/CameraTarget/Camera3D
-
+@onready var connpoint = find_child("ConnectionPoint")
 @onready var model_vac_core = $"Vacum-2/Cube_001"
 
 
@@ -38,6 +38,8 @@ var tilt_angle_start = 0;
 var point_dir := 0.0
 
 var active_plug = null
+var active_cable = null
+var active_conn_point = null
 
 var connected := false
 var stopped_timer := 0.0
@@ -131,6 +133,11 @@ func _physics_process(delta: float) -> void:
 		cam.position.x = move_toward(cam.position.x, 0, delta* 20)
 		cam_look_target.position.x = move_toward(cam_look_target.position.x, 0, delta* 20 )
 	
+	if connected:
+		active_cable.look_at(active_conn_point.global_position)
+		active_cable.scale.z = (active_conn_point.global_position - active_cable.global_position).length()
+
+	
 	
 	move_and_slide()
 
@@ -181,6 +188,8 @@ func fire_cable():
 			print("Hit object: ", result.collider.name)
 	else:
 		active_plug.queue_free()
+		active_cable.queue_free()
+		active_conn_point = null
 		connected = false
 
 func create_cable(pos:Vector3, norm:Vector3):
@@ -190,4 +199,13 @@ func create_cable(pos:Vector3, norm:Vector3):
 	nplug.look_at(nplug.global_position - norm, Vector3.UP)
 	connected = true
 	active_plug = nplug
+	
+	var ncable:Node3D = cable_scene.instantiate()
+	connpoint.add_child(ncable)
+	ncable.look_at(nplug.position)
+	ncable.scale.z = (nplug.position - ncable.position).length()
+	active_cable = ncable
+	active_conn_point = nplug.find_child("wire_connection")
+	
+	
 	
