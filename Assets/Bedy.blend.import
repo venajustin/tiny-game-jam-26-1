@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwi1shesr6weh"
-path="res://.godot/imported/Vacum 2.blend-8fc2656330ef3365f992f60e5478f290.scn"
+uid="uid://dtb7y3febgrcd"
+path="res://.godot/imported/Bedy.blend-f7c37f2dd86686e5770b77d94e7c7316.scn"
 
 [deps]
 
-source_file="res://Assets/Vacum 2.blend"
-dest_files=["res://.godot/imported/Vacum 2.blend-8fc2656330ef3365f992f60e5478f290.scn"]
+source_file="res://Assets/Bedy.blend"
+dest_files=["res://.godot/imported/Bedy.blend-f7c37f2dd86686e5770b77d94e7c7316.scn"]
 
 [params]
 
