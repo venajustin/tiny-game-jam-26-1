@@ -1,30 +1,34 @@
-[gd_scene format=3 uid="uid://ds7wr8dgdp6b7"]
+[gd_scene format=3 uid="uid://def0denmrg5ky"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iyygd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyfas"]
+albedo_color = Color(0.34407577, 0.34407574, 0.34407574, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyygd"]
-albedo_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eyfas"]
-material = SubResource("StandardMaterial3D_iyygd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5g03"]
-albedo_color = Color(0.2357119, 0.22786713, 0.23238921, 1)
+albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_t6mlt"]
-material = SubResource("StandardMaterial3D_a5g03")
+[node name="Plug" type="Node3D" unique_id=936458067]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eamx6"]
-size = Vector3(0.5732422, 1, 0.1817627)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1889642418]
+transform = Transform3D(-1.2240433e-08, 0, -0.28002846, 0, 0.28002846, 0, 0.28002846, 0, -1.2240433e-08, -0.009137034, 0, 0.1747033)
+mesh = SubResource("BoxMesh_iyygd")
+surface_material_override/0 = SubResource("StandardMaterial3D_eyfas")
 
-[node name="Plug" type="StaticBody3D" unique_id=1398382156 groups=["attatch-point"]]
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1437031147]
-transform = Transform3D(0.3133352, 0, 0, 0, 0.6108202, 0, 0, 0, 0.15138519, 0, 0, 0.055722)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=622253310]
+transform = Transform3D(0.49098504, 0, 0, 0, 0.39687106, 0, 0, 0, 0.12475816, -0.7104222, 0, 0.27786255)
+material_override = SubResource("StandardMaterial3D_iyygd")
 mesh = SubResource("BoxMesh_eyfas")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=81557154]
-transform = Transform3D(0.5719596, 0, 0, 0, 0.9939997, 0, 0, 0, 0.15138519, 0, 0, 0)
-mesh = SubResource("BoxMesh_t6mlt")
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=331434475]
+transform = Transform3D(0.49098504, 0, 0, 0, 0.39687106, 0, 0, 0, 0.12475816, -0.71576935, 0, -0.260687)
+material_override = SubResource("StandardMaterial3D_a5g03")
+mesh = SubResource("BoxMesh_eyfas")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1877172542]
-transform = Transform3D(0.98117375, 0, 0, 0, 0.98117375, 0, 0, 0, 0.98117375, -0.0015248805, 0, -0.008399904)
-shape = SubResource("BoxShape3D_eamx6")
+[node name="wire_connection" type="Marker3D" parent="." unique_id=391891077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010989904, 0, 0.31844556)
