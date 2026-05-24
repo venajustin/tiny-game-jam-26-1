@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://def0denmrg5ky" path="res://scenes/plug.tscn" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://cqdbd62ofqess" path="res://scripts/camera_3d.gd" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://lq860qhwuoqi" path="res://Assets/Vacum-2_Dodge-Hellcat-Logo_1.png" id="3_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://dk1w3meb2psco" path="res://scenes/cable.tscn" id="3_tuyoq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtqg"]
 resource_name = "Red Stripe"
@@ -201,6 +202,7 @@ height = 2.7711182
 [node name="Player" type="CharacterBody3D" unique_id=1827467941]
 script = ExtResource("1_g2els")
 plug_scene = ExtResource("2_qlg0r")
+cable_scene = ExtResource("3_tuyoq")
 
 [node name="Vacum-2" type="Node3D" parent="." unique_id=1547893427]
 
@@ -211,6 +213,9 @@ mesh = SubResource("ArrayMesh_1uaiw")
 [node name="Cube_001" type="MeshInstance3D" parent="Vacum-2" unique_id=1097426]
 transform = Transform3D(1, 0, 0, 0, 0.31071022, -0.14668863, 0, 0.046076074, 0.9891827, -9.5890784e-05, 0.44474778, 0.807824)
 mesh = SubResource("ArrayMesh_y283m")
+
+[node name="ConnectionPoint" type="Marker3D" parent="Vacum-2/Cube_001" unique_id=2065486222]
+transform = Transform3D(1, 0, 0, 0, 3.1491802, 0.4670006, 0, -0.14668864, 0.9891828, 9.5890784e-05, 1.3049102, 0.12750942)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Vacum-2" unique_id=1226205191]
 libraries/ = SubResource("AnimationLibrary_2bu08")
