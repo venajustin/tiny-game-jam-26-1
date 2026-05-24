@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp3m1qy0tfloy"
-path.s3tc="res://.godot/imported/Dodge-Hellcat-Logo.png-869447e31695f7125c28b09f4361663b.s3tc.ctex"
+uid="uid://bq0j4q7n7mj17"
+path="res://.godot/imported/Grey Under metal.png-186f95b8be1106294775b4bd74717c28.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/textures/Dodge-Hellcat-Logo.png"
-dest_files=["res://.godot/imported/Dodge-Hellcat-Logo.png-869447e31695f7125c28b09f4361663b.s3tc.ctex"]
+source_file="res://Assets/Grey Under metal.png"
+dest_files=["res://.godot/imported/Grey Under metal.png-186f95b8be1106294775b4bd74717c28.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
