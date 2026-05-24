@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://tgcqdm0qhtax"]
 
-[ext_resource type="Script" uid="uid://bu0ck2utd883q" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bu0ck2utd883q" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://o2mxbi5j4ptp" path="res://Assets/Vacum-2_Dodge-Hellcat-Logo.png" id="2_dqkch"]
 [ext_resource type="PackedScene" uid="uid://def0denmrg5ky" path="res://scenes/plug.tscn" id="2_qlg0r"]
-[ext_resource type="Script" uid="uid://cqdbd62ofqess" path="res://scenes/camera_3d.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cqdbd62ofqess" path="res://scripts/camera_3d.gd" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://lq860qhwuoqi" path="res://Assets/Vacum-2_Dodge-Hellcat-Logo_1.png" id="3_qlg0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtqg"]
