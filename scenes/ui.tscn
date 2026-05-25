@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://0v2vee5om36x"]
 
+[ext_resource type="Script" uid="uid://c5hpb6tiak747" path="res://scenes/ui.gd" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://i0ifa62lht06" path="res://icon.svg" id="2_x4jx1"]
+
 [node name="UI" type="Control" unique_id=982584726]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1154.0
 offset_bottom = 648.0
 mouse_filter = 2
+script = ExtResource("1_nt7q6")
 
 [node name="Croshair" type="Control" parent="." unique_id=1650793581]
 layout_mode = 1
@@ -35,3 +39,136 @@ offset_left = -8.0
 offset_top = -1.0
 offset_right = 8.0
 offset_bottom = 1.0
+
+[node name="Control" type="Control" parent="." unique_id=2025242060]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -101.0
+offset_right = 152.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PrimaryControls" type="HBoxContainer" parent="Control" unique_id=1121835898]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Control" type="Control" parent="Control/PrimaryControls" unique_id=1963475162]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/PrimaryControls" unique_id=490287830]
+layout_mode = 2
+text = "WASD
+move"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/PrimaryControls" unique_id=1233946758]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="Control/PrimaryControls" unique_id=1515370229]
+layout_mode = 2
+text = "LMB
+plug"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Control/PrimaryControls" unique_id=590905010]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label3" type="Label" parent="Control/PrimaryControls" unique_id=123198057]
+layout_mode = 2
+text = "RMB
+zoom"
+horizontal_alignment = 1
+
+[node name="Control4" type="Control" parent="Control/PrimaryControls" unique_id=1688591825]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="SecondaryControls" type="HBoxContainer" parent="Control" unique_id=160117440]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Control" type="Control" parent="Control/SecondaryControls" unique_id=1302059495]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/SecondaryControls" unique_id=867253139]
+layout_mode = 2
+text = "WASD
+move"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/SecondaryControls" unique_id=340040716]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="Control/SecondaryControls" unique_id=1314840755]
+layout_mode = 2
+text = "LMB
+detatch"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Control/SecondaryControls" unique_id=1486375501]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label3" type="Label" parent="Control/SecondaryControls" unique_id=245462676]
+layout_mode = 2
+text = "RMB
+pull"
+horizontal_alignment = 1
+
+[node name="Control4" type="Control" parent="Control/SecondaryControls" unique_id=605949572]
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=823273069]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+text = "Controls:"
+
+[node name="highlight" type="Control" parent="." unique_id=424742017]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="texture" type="TextureRect" parent="highlight" unique_id=790907883]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_x4jx1")

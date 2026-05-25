@@ -18,6 +18,10 @@ material = SubResource("StandardMaterial3D_a5g03")
 size = Vector3(0.5732422, 1, 0.1817627)
 
 [node name="outlet" type="StaticBody3D" unique_id=1398382156 groups=["attach-point"]]
+metadata/screen_notifier = NodePath("VisibleOnScreenNotifier3D")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=600102594]
+aabb = AABB(-0.2958231, -0.48407388, -0.1210184, 0.5916462, 0.96814775, 0.2420368)
 
 [node name="Outlet Model" parent="." unique_id=54721032 instance=ExtResource("1_vpq12")]
 

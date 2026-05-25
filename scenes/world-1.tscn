@@ -26,7 +26,7 @@ size = Vector3(51.97531, 1, 47.3179)
 size = Vector3(51.532776, 14.666016, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfcj1"]
-size = Vector3(1, 4.4692383, 1)
+size = Vector3(2.9820557, 4.4692383, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uie1"]
 
@@ -68,12 +68,18 @@ shape = SubResource("BoxShape3D_0uie1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7828865, 1.5722153, -3.4643803)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=1406105810]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2321777, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079956055, 1.2321777, 0)
 shape = SubResource("BoxShape3D_kfcj1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=299389991]
-transform = Transform3D(1, 0, 0, 0, 4.4675846, 0, 0, 0, 1, 0, 1.2252152, 0)
+transform = Transform3D(3, 0, 0, 0, 4.468, 0, 0, 0, 1, 0, 1.2252152, 0)
 mesh = SubResource("BoxMesh_0uie1")
 
 [node name="outlet" parent="." unique_id=1398382156 instance=ExtResource("2_kfcj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.708388, 2, -2.9212832)
+
+[node name="outlet2" parent="." unique_id=1299196390 instance=ExtResource("2_kfcj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9609423, 2, -2.9212832)
+
+[node name="outlet3" parent="." unique_id=2032579973 instance=ExtResource("2_kfcj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6470613, 2, -2.9212832)
