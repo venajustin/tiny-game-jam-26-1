@@ -3,6 +3,7 @@ extends Control
 @onready var primary_cont = $Control/PrimaryControls
 @onready var secondary_cont = $Control/SecondaryControls
 @onready var crosshair = $Croshair
+@onready var high = $highlight
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,8 @@ func _ready() -> void:
 	player.connect("set_controls_mode", on_set_controls_mode)
 	secondary_cont.visible = false
 	crosshair.visible = false
+	player.find_child("Camera3D").connect("highlight_outlet", on_highlight_object)
+	high.visible = false
 
 func set_primary():
 	secondary_cont.visible = false
@@ -28,3 +31,11 @@ func on_set_controls_mode(primary:bool):
 		set_primary()
 	else:
 		set_secondary()
+
+func on_highlight_object(show:bool, location:Vector2):
+	if show:
+		high.visible = true
+		high.position = location
+	else:
+		high.visible = false
+	

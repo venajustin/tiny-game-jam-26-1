@@ -5,7 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const FRICTION = 5.0
 const PLAYER_ACC = 35.0
-const FLOOR_FRICTION = 20.0
+const FLOOR_FRICTION = 5.0
 const MOUSE_SENSITIVITY = -.003
 
 @export var boost_speed := 30.0
@@ -124,11 +124,12 @@ func _physics_process(delta: float) -> void:
 		cam.position.x = move_toward(cam.position.x, 0, delta* 20)
 		cam_look_target.position.x = move_toward(cam_look_target.position.x, 0, delta* 20 )
 		
-	if connected and Input.is_action_pressed("primary"):
+	if connected and Input.is_action_pressed("pull"):
 		
 		var boost_dir:Vector3 = (active_conn_point.global_position - active_cable.global_position).normalized()
 		var vac_dir:Vector3 = -global_basis.z
 		
+		# powered = true # quick override
 		if powered:
 			if is_on_floor():
 				# boost
@@ -193,10 +194,9 @@ func _unhandled_input(event: InputEvent):
 		#current_angle = clamp(current_angle, deg_to_rad(-max_look_degrees), deg_to_rad(max_look_degrees))
 		#cam_pivot.transform.basis = Basis.from_euler(Vector3(current_angle, cam_pivot.transform.basis.rotation.y, cam_pivot.transform.basis.rotation.z))
 	
-	if not connected and event.is_action_pressed("primary"):
+	if  event.is_action_pressed("primary"):
 		fire_cable()
-	if connected and event.is_action_pressed("secondary"):
-		fire_cable()
+
 		
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
