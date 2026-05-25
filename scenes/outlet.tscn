@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://craka2ll1pe35"]
+[gd_scene format=3 uid="uid://bxb1qjkc2p1oj"]
+
+[ext_resource type="PackedScene" uid="uid://gcwp25b87aox" path="res://Assets/Outlet.glb" id="1_vpq12"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyygd"]
 albedo_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
@@ -17,12 +19,16 @@ size = Vector3(0.5732422, 1, 0.1817627)
 
 [node name="outlet" type="StaticBody3D" unique_id=1398382156 groups=["attach-point"]]
 
+[node name="Outlet Model" parent="." unique_id=54721032 instance=ExtResource("1_vpq12")]
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1437031147]
 transform = Transform3D(0.3133352, 0, 0, 0, 0.6108202, 0, 0, 0, 0.15138519, 0, 0, 0.055722)
+visible = false
 mesh = SubResource("BoxMesh_eyfas")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=81557154]
 transform = Transform3D(0.5719596, 0, 0, 0, 0.9939997, 0, 0, 0, 0.15138519, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_t6mlt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1877172542]
