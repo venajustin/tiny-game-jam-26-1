@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://tgcqdm0qhtax" path="res://scenes/player.tscn" id="1_ba2of"]
 [ext_resource type="PackedScene" uid="uid://dj8gpc0lh7nyg" path="res://Assets/Map1.blend" id="2_ba2of"]
 [ext_resource type="PackedScene" uid="uid://bxb1qjkc2p1oj" path="res://scenes/outlet.tscn" id="3_gvald"]
+[ext_resource type="PackedScene" uid="uid://di5xvidnrfgtf" path="res://scenes/dust_bunny.tscn" id="4_7f8xf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3fkud"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -146,3 +147,69 @@ transform = Transform3D(1.7507424, 4.3153115e-08, 0.9669027, 0.9669027, -7.64113
 
 [node name="outlet25" parent="." unique_id=1283823528 instance=ExtResource("3_gvald")]
 transform = Transform3D(1.7127336, -4.4597662e-08, -1.0327363, -1.0327363, -7.557739e-08, -1.7127336, -8.3400664e-10, 2, -8.775077e-08, 43.504143, 50.18945, 53.34453)
+
+[node name="DustBunny" parent="." unique_id=1355725424 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.25551, -4.1886835, -1.3139629)
+
+[node name="DustBunny2" parent="." unique_id=515540255 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.85122, -4.18869, -31.146652)
+
+[node name="DustBunny3" parent="." unique_id=201839607 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.478033, -4.1886864, -65.59059)
+
+[node name="DustBunny4" parent="." unique_id=214616319 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.533493, -4.1886826, -121.45079)
+
+[node name="DustBunny5" parent="." unique_id=177840738 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0831, 16.67054, -144.36195)
+
+[node name="DustBunny6" parent="." unique_id=1190143348 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.837864, 16.289726, -94.51661)
+
+[node name="DustBunny7" parent="." unique_id=1115106152 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.340332, 16.289726, -44.99773)
+
+[node name="DustBunny8" parent="." unique_id=2016948786 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.236637, 16.289726, 14.576529)
+
+[node name="DustBunny9" parent="." unique_id=1641054006 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.186752, 16.289726, 87.834)
+
+[node name="DustBunny10" parent="." unique_id=1313039944 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.015976, 16.289726, 82.73084)
+
+[node name="DustBunny11" parent="." unique_id=877925697 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.876158, 16.289726, 13.657343)
+
+[node name="DustBunny12" parent="." unique_id=716161305 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.835351, 16.289726, -90.98739)
+
+[node name="DustBunny13" parent="." unique_id=798340143 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.526707, 28.710476, -93.69884)
+
+[node name="DustBunny14" parent="." unique_id=2002175357 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.78029, 28.710476, 54.87543)
+
+[node name="DustBunny15" parent="." unique_id=71816237 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.779045, 28.710476, 50.138145)
+
+[node name="DustBunny16" parent="." unique_id=219293068 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.91503, 28.710476, 38.026833)
+
+[node name="DustBunny17" parent="." unique_id=2028341924 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.120834, 28.710476, -79.863235)
+
+[node name="DustBunny18" parent="." unique_id=475041712 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.429716, 45.04213, -43.392628)
+
+[node name="DustBunny19" parent="." unique_id=1421644600 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.944506, 45.04213, 29.3837)
+
+[node name="DustBunny20" parent="." unique_id=2015923512 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.416286, -4.1886826, 46.615284)
+
+[node name="DustBunny21" parent="." unique_id=1635299893 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.422966, 11.125172, 30.721058)
+
+[node name="DustBunny22" parent="." unique_id=432381506 instance=ExtResource("4_7f8xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.14444, -4.1886864, 24.717037)
