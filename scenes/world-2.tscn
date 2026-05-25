@@ -32,7 +32,7 @@ environment = SubResource("Environment_oh5ts")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41959572, 3.7673588, -0.45244408)
 world = NodePath("..")
 
-[node name="Map1" parent="." unique_id=1058148031 instance=ExtResource("2_ba2of")]
+[node name="Map1" parent="." unique_id=106072055 instance=ExtResource("2_ba2of")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.369282, -4.202141, -2.1322708)
 
 [node name="outlet" parent="." unique_id=1398382156 instance=ExtResource("3_gvald")]
