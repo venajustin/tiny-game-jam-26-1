@@ -242,6 +242,10 @@ func fire_cable():
 		active_conn_point = null
 		connected = false
 
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func create_cable(pos:Vector3, norm:Vector3):
 	var nplug:Node3D = plug_scene.instantiate()
 	world.add_child(nplug)
