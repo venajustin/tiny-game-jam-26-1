@@ -8,7 +8,7 @@ const PLAYER_ACC = 35.0
 const FLOOR_FRICTION = 20.0
 const MOUSE_SENSITIVITY = -.003
 
-
+@export var boost_speed := 30.0
 @export var plug_speed := 15.0
 @export var turn_speed := 1.0
 @export var cam_offset_ammount := 2.0
@@ -24,7 +24,6 @@ const MOUSE_SENSITIVITY = -.003
 @onready var cam:Camera3D = $CameraPivot/CameraTarget/Camera3D
 @onready var connpoint = find_child("ConnectionPoint")
 @onready var model_vac_core = $"Vacum-2/Cube_001"
-
 
 var backing_up := false
 var breaking = false
@@ -42,11 +41,10 @@ var active_cable = null
 var active_conn_point = null
 
 var connected := false
+var powered := false
 var stopped_timer := 0.0
 
 signal display_crosshair(yes:bool)
-
-
 
 #var camera_cart_speed := cam_cart_max_speed
 #var cam_cart_max_speed := 30.0
@@ -97,14 +95,13 @@ func _physics_process(delta: float) -> void:
 		turn_input = -turn_input
 	velocity = velocity.rotated(Vector3(0, 1, 0),  delta * turn_input * turn_speed )
 	
-	if velocity.length() > 0:
-		if backing_up:
-			point_dir = Vector2(-velocity.x, -velocity.z).angle_to(Vector2(0, -1))
-		else:
-			point_dir = Vector2(velocity.x, velocity.z).angle_to(Vector2(0, -1))
-
-	else:
-		point_dir += delta * turn_input * turn_speed
+	#if velocity.length() > 0:
+		#if backing_up:
+			#point_dir = Vector2(-velocity.x, -velocity.z).angle_to(Vector2(0, -1))
+		#else:
+			#point_dir = Vector2(velocity.x, velocity.z).angle_to(Vector2(0, -1))
+	
+	point_dir += delta * turn_input * turn_speed
 	
 	rotation.y = point_dir
 		
@@ -132,6 +129,29 @@ func _physics_process(delta: float) -> void:
 		cam_target.position.z = move_toward(cam_target.position.z, 9, delta * 40)
 		cam.position.x = move_toward(cam.position.x, 0, delta* 20)
 		cam_look_target.position.x = move_toward(cam_look_target.position.x, 0, delta* 20 )
+		
+	if connected and Input.is_action_pressed("secondary"):
+		
+		var boost_dir:Vector3 = (active_conn_point.global_position - active_cable.global_position).normalized()
+		var vac_dir:Vector3 = -global_basis.z
+		
+		if powered:
+			if is_on_floor():
+				# boost
+				if velocity.dot(vac_dir) < boost_dir.dot(vac_dir) * boost_speed:
+					velocity -= vac_dir * velocity.dot(vac_dir) 
+					velocity += vac_dir * boost_dir.dot(vac_dir) * boost_speed
+			else:
+				if velocity.dot(boost_dir) < boost_speed:
+					velocity -= velocity.dot(boost_dir) * boost_dir 
+					velocity += boost_dir * boost_speed
+		
+		# Swinging
+		if velocity.dot(boost_dir) < 0:
+			velocity -= velocity.dot(boost_dir) * boost_dir
+			
+	
+	
 	
 	if connected:
 		active_cable.look_at(active_conn_point.global_position)
@@ -182,8 +202,10 @@ func fire_cable():
 		var result := space_state.intersect_ray(query)
 		
 		if result:
+			powered = false
 			if result.collider.is_in_group("attach-point"):
 				print("OUTLET HIT")
+				powered = true
 			create_cable(result.position, result.normal)
 			print("Hit object: ", result.collider.name)
 	else:
