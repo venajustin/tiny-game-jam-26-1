@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 attatch-point=""
 attach-point=""
 shoot-through=""
+Player=""
 
 [input]
 

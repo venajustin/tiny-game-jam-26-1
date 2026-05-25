@@ -276,7 +276,7 @@ height = 2.7711182
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d2wvv"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1827467941]
+[node name="Player" type="CharacterBody3D" unique_id=1827467941 groups=["Player"]]
 script = ExtResource("1_g2els")
 plug_scene = ExtResource("2_qlg0r")
 cable_scene = ExtResource("3_tuyoq")
