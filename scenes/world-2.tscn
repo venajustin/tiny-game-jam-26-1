@@ -86,3 +86,27 @@ transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -
 
 [node name="outlet12" parent="." unique_id=944968420 instance=ExtResource("3_gvald")]
 transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, 17.560844, 15.256416, 83.364105)
+
+[node name="outlet14" parent="." unique_id=1515217113 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, 54.30387, 26.856598, 93.49642)
+
+[node name="outlet15" parent="." unique_id=801918810 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, -71.47211, 26.856598, 93.49642)
+
+[node name="outlet16" parent="." unique_id=1322743276 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, 54.30387, 26.856598, -79.705475)
+
+[node name="outlet17" parent="." unique_id=2036604245 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, -71.47211, 26.856598, -79.705475)
+
+[node name="outlet18" parent="." unique_id=1345168605 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, 54.30387, 26.856598, 3.5467072)
+
+[node name="outlet19" parent="." unique_id=302114765 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.9996388, -8.3400664e-10, -0.038008936, -0.038008936, -8.775077e-08, -1.9996388, -8.3400664e-10, 2, -8.775077e-08, -71.47211, 26.856598, 3.5467072)
+
+[node name="outlet20" parent="." unique_id=571807004 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.7507424, 4.3153115e-08, 0.9669027, 0.9669027, -7.641139e-08, -1.7507424, -8.3400664e-10, 2, -8.775077e-08, -60.70433, 50.18945, -16.58905)
+
+[node name="outlet21" parent="." unique_id=472072760 instance=ExtResource("3_gvald")]
+transform = Transform3D(1.7127336, -4.4597662e-08, -1.0327363, -1.0327363, -7.557739e-08, -1.7127336, -8.3400664e-10, 2, -8.775077e-08, 43.504143, 50.18945, -10.3026285)
