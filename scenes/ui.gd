@@ -16,6 +16,8 @@ func _ready() -> void:
 	player.find_child("Camera3D").connect("highlight_outlet", on_highlight_object)
 	high.visible = false
 	player.connect("set_game_time", on_player_set_time)
+	player.connect("set_bunny_count", on_set_bunny_count)
+
 
 func set_primary():
 	secondary_cont.visible = false
@@ -43,3 +45,6 @@ func on_highlight_object(show:bool, location:Vector2):
 	
 func on_player_set_time(time):
 	$Control2/TimeLabel.text = str(int(floor(time / 60))) + ":" + str(int(floor(time)) % 60)
+
+func on_set_bunny_count(bunnyCount):
+	$Control2/BunnyCount.text = str(bunnyCount)

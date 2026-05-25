@@ -11,7 +11,7 @@ const MOUSE_SENSITIVITY = -.003
 @export var boost_speed := 30.0
 @export var plug_speed := 15.0
 @export var plug_acc := 30
-@export var turn_speed := 1.0
+@export var turn_speed := 3.0
 @export var cam_offset_ammount := 2.0
 @export var ray_length := 300.0
 @export var plug_scene:PackedScene = null
@@ -55,6 +55,7 @@ var bend_count := 0
 signal display_crosshair(yes:bool)
 signal set_controls_mode(primary_controls: bool)
 signal set_game_time(time:float)
+signal set_bunny_count(bunny_count)
 
 #var camera_cart_speed := cam_cart_max_speed
 #var cam_cart_max_speed := 30.0
@@ -301,3 +302,9 @@ func _on_camera_3d_set_player_target(new_target: Node3D) -> void:
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+
+var bunny_count = 0
+func add_bunny():
+	bunny_count += 1
+	set_bunny_count.emit(bunny_count)
+	
