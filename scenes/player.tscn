@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://tgcqdm0qhtax"]
 
 [ext_resource type="Script" uid="uid://bu0ck2utd883q" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="PackedScene" uid="uid://def0denmrg5ky" path="res://scenes/plug.tscn" id="2_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://ds7wr8dgdp6b7" path="res://scenes/plug.tscn" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://cqdbd62ofqess" path="res://scripts/camera_3d.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dk1w3meb2psco" path="res://scenes/cable.tscn" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://coi346qpt55fj" path="res://Assets/Racing Vacum Head Texture.png" id="4_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dlra6keshhflj" path="res://Assets/Vacum Player Model 1_Racing Vacum Head Texture.png" id="4_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://biun13y0q2r4o" path="res://Assets/Vacum Player Model 1_Grey Vents Texture Bake.png" id="5_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://cebwcgejr6mqx" path="res://Assets/Vacum Player Model 1_RED.png" id="6_jej6c"]
@@ -11,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://75hkg74jrd7n" path="res://Assets/Vacum Player Model 1_GREY.png" id="8_oprun"]
 [ext_resource type="Texture2D" uid="uid://btap3xlyydjr" path="res://Assets/Vacum Player Model 1_Black.png" id="9_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://dy3241vahnbgm" path="res://Assets/Vacum Player Model 1_Pure Grey.png" id="10_qfm1y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jej6c"]
+albedo_texture = ExtResource("4_3v2ag")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbpj3"]
 resource_name = "Red Stripe"
@@ -285,6 +290,7 @@ cable_scene = ExtResource("3_tuyoq")
 
 [node name="Cube" type="MeshInstance3D" parent="Vacum-2" unique_id=1981679104]
 transform = Transform3D(0.7536193, 0, 0, 0, 0.314108, 0, 0, 0, 0.6114241, 0, 0.3389793, 0.27481252)
+material_override = SubResource("StandardMaterial3D_jej6c")
 mesh = SubResource("ArrayMesh_fdbrx")
 
 [node name="Cube_001" type="MeshInstance3D" parent="Vacum-2" unique_id=408155822]
