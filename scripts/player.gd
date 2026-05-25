@@ -20,10 +20,11 @@ const MOUSE_SENSITIVITY = -.003
 @onready var cam_pivot = $CameraPivot
 @onready var cam_look_pivot = $CameraLookPivot
 @onready var cam_look_target = $CameraLookPivot/CameraLookTarget
-@onready var cam_target = $CameraPivot/CameraTarget
-@onready var cam:Camera3D = $CameraPivot/CameraTarget/Camera3D
+@onready var cam_target = find_child("CameraTarget")
+@onready var cam:Camera3D = find_child("Camera3D")
 @onready var connpoint = find_child("ConnectionPoint")
 @onready var model_vac_core = $"Vacum-2/Cube_001"
+@onready var spring_arm = $CameraPivot/SpringArm3D
 
 var backing_up := false
 var breaking = false
@@ -53,6 +54,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	tilt_angle_start = model_vac_core.rotation.x
 	display_crosshair.emit(true)
+	spring_arm.add_excluded_object(self)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -122,11 +124,13 @@ func _physics_process(delta: float) -> void:
 		
 	
 	if not connected and Input.is_action_pressed("secondary"):
-		cam_target.position.z = move_toward(cam_target.position.z, 4, delta * 40)
+		# cam_target.position.z = move_toward(cam_target.position.z, 4, delta * 40)
+		spring_arm.spring_length = move_toward(cam_target.position.z, 4, delta * 40)
 		cam.position.x = move_toward(cam.position.x, cam_offset_ammount, delta* 20)
 		cam_look_target.position.x = move_toward(cam_look_target.position.x, cam_offset_ammount, delta* 20 )
 	else: 
-		cam_target.position.z = move_toward(cam_target.position.z, 9, delta * 40)
+		# cam_target.position.z = move_toward(cam_target.position.z, 9, delta * 40)
+		spring_arm.spring_length = move_toward(cam_target.position.z, 9, delta * 40)
 		cam.position.x = move_toward(cam.position.x, 0, delta* 20)
 		cam_look_target.position.x = move_toward(cam_look_target.position.x, 0, delta* 20 )
 		
@@ -165,17 +169,17 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
-		cam_pivot.rotate_y(event.relative.x * MOUSE_SENSITIVITY)
-		cam_look_pivot.rotate_y(event.relative.x * MOUSE_SENSITIVITY)
+		cam_pivot.rotate_y(event.screen_relative.x * MOUSE_SENSITIVITY)
+		cam_look_pivot.rotate_y(event.screen_relative.x * MOUSE_SENSITIVITY)
 		
-		if event.relative.y < 0 and cam_pivot.rotation.x < max_look_rad:
-			cam_pivot.rotate_object_local(Vector3.RIGHT, event.relative.y * MOUSE_SENSITIVITY)
-			cam_look_pivot.rotate_object_local(Vector3.RIGHT, event.relative.y * MOUSE_SENSITIVITY)
-		if event.relative.y > 0 and cam_pivot.rotation.x > -max_look_rad:
-			cam_pivot.rotate_object_local(Vector3.RIGHT, event.relative.y * MOUSE_SENSITIVITY)
-			cam_look_pivot.rotate_object_local(Vector3.RIGHT, event.relative.y * MOUSE_SENSITIVITY)
+		if event.screen_relative.y < 0 and cam_pivot.rotation.x < max_look_rad:
+			cam_pivot.rotate_object_local(Vector3.RIGHT, event.screen_relative.y * MOUSE_SENSITIVITY)
+			cam_look_pivot.rotate_object_local(Vector3.RIGHT, event.screen_relative.y * MOUSE_SENSITIVITY)
+		if event.screen_relative.y > 0 and cam_pivot.rotation.x > -max_look_rad:
+			cam_pivot.rotate_object_local(Vector3.RIGHT, event.screen_relative.y * MOUSE_SENSITIVITY)
+			cam_look_pivot.rotate_object_local(Vector3.RIGHT, event.screen_relative.y * MOUSE_SENSITIVITY)
 		
-		#var input_dir: float = event.relative.y
+		#var input_dir: float = event.screen_relative.y
 		#var angle_change = input_dir * MOUSE_SENSITIVITY
 		#current_angle += angle_change
 		#current_angle = clamp(current_angle, deg_to_rad(-max_look_degrees), deg_to_rad(max_look_degrees))

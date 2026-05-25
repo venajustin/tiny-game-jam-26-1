@@ -274,7 +274,7 @@ size = Vector3(1.9995346, 0.34934998, 2.8356934)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
 height = 2.7711182
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_dqkch"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_d2wvv"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1827467941]
 script = ExtResource("1_g2els")
@@ -316,18 +316,16 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.882726
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="CameraPivot" type="Marker3D" parent="." unique_id=305840138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8886318, 0)
 
-[node name="CameraTarget" type="Marker3D" parent="CameraPivot" unique_id=1102475149]
-transform = Transform3D(1, 0, 0, 0, 0.9922757, 0.124051765, 0, -0.124051765, 0.9922757, 0, 0, 9)
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=188407956]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("SphereShape3D_d2wvv")
+spring_length = 9.0
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraTarget" unique_id=950305355]
+[node name="CameraTarget" type="Marker3D" parent="CameraPivot/SpringArm3D" unique_id=1102475149]
+transform = Transform3D(1, 0, 0, 0, 0.9922756, 0.12405175, 0, -0.12405175, 0.9922756, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D/CameraTarget" unique_id=950305355]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 script = ExtResource("3_qhqgy")
-
-[node name="Area3D" type="Area3D" parent="CameraPivot/CameraTarget" unique_id=247343403]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/CameraTarget/Area3D" unique_id=611229634]
-shape = SubResource("SphereShape3D_dqkch")
-
-[connection signal="body_entered" from="CameraPivot/CameraTarget/Area3D" to="." method="_on_cam_detector_body_entered"]
-[connection signal="body_exited" from="CameraPivot/CameraTarget/Area3D" to="." method="_on_cam_detected_body_exited"]
