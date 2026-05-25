@@ -45,7 +45,7 @@ environment = SubResource("Environment_oh5ts")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41959572, 3.7673588, -0.45244408)
 world = NodePath("..")
 
-[node name="Map1" parent="." unique_id=1372185820 instance=ExtResource("2_ba2of")]
+[node name="Map1" parent="." unique_id=1603516326 instance=ExtResource("2_ba2of")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.369282, -4.202141, -2.1322708)
 
 [node name="outlet1" parent="." unique_id=1398382156 instance=ExtResource("3_gvald")]
@@ -64,4 +64,16 @@ transform = Transform3D(0.25881916, 0.9659258, -4.222196e-08, 0, -4.371139e-08, 
 transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 65.75322, -1.876934, -125.427246)
 
 [node name="outlet6" parent="." unique_id=1150521540 instance=ExtResource("3_gvald")]
-transform = Transform3D(0.25881916, 0.9659258, -4.222196e-08, 0, -4.371139e-08, -1, -0.9659258, 0.25881916, -1.1313346e-08, -83.03605, -1.876934, -125.427246)
+transform = Transform3D(1.1920929e-07, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, 1.1920929e-07, -5.3290705e-15, -83.03605, -1.876934, -125.427246)
+
+[node name="outlet7" parent="." unique_id=958754695 instance=ExtResource("3_gvald")]
+transform = Transform3D(1, -1.1920929e-07, 3.2398052e-08, -1.1920929e-07, -1, 8.593335e-08, 3.239804e-08, -8.593335e-08, -1, -32.77653, 15.43284, -105.247086)
+
+[node name="outlet8" parent="." unique_id=1605235981 instance=ExtResource("3_gvald")]
+transform = Transform3D(1, -1.1920929e-07, 3.2398052e-08, -1.1920929e-07, -1, 8.593335e-08, 3.239804e-08, -8.593335e-08, -1, 16.652323, 15.43284, -105.247086)
+
+[node name="outlet9" parent="." unique_id=1017220856 instance=ExtResource("3_gvald")]
+transform = Transform3D(1, -1.1920929e-07, 3.2398052e-08, -1.1920929e-07, -1, 8.593335e-08, 3.239804e-08, -8.593335e-08, -1, -32.77653, 15.43284, 57.700897)
+
+[node name="outlet10" parent="." unique_id=200741422 instance=ExtResource("3_gvald")]
+transform = Transform3D(1, -1.1920929e-07, 3.2398052e-08, -1.1920929e-07, -1, 8.593335e-08, 3.239804e-08, -8.593335e-08, -1, 16.652323, 15.43284, 57.700897)
