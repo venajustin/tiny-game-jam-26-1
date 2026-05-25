@@ -24,6 +24,7 @@ metadata/screen_notifier = NodePath("VisibleOnScreenNotifier3D")
 aabb = AABB(-0.2958231, -0.48407388, -0.1210184, 0.5916462, 0.96814775, 0.2420368)
 
 [node name="Outlet Model" parent="." unique_id=54721032 instance=ExtResource("1_vpq12")]
+transform = Transform3D(0.3658313, 0, 0, 0, -1.7436664e-08, -0.39890438, 0, 0.39890438, -1.7436664e-08, -0.027660519, 0, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1437031147]
 transform = Transform3D(0.3133352, 0, 0, 0, 0.6108202, 0, 0, 0, 0.15138519, 0, 0, 0.055722)
@@ -36,5 +37,5 @@ visible = false
 mesh = SubResource("BoxMesh_t6mlt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1877172542]
-transform = Transform3D(2.7425318, 0, 0, 0, 0.5836011, 0, 0, 0, 13.944827, -0.02298911, 0, -0.008399904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02298911, 0, -0.008399904)
 shape = SubResource("BoxShape3D_eamx6")
