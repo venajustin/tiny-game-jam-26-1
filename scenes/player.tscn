@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://tgcqdm0qhtax"]
 
 [ext_resource type="Script" uid="uid://bu0ck2utd883q" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="PackedScene" uid="uid://ds7wr8dgdp6b7" path="res://scenes/plug.tscn" id="2_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://def0denmrg5ky" path="res://scenes/plug.tscn" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://cqdbd62ofqess" path="res://scripts/camera_3d.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://dk1w3meb2psco" path="res://scenes/cable.tscn" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://coi346qpt55fj" path="res://Assets/Racing Vacum Head Texture.png" id="4_3v2ag"]
@@ -335,3 +335,5 @@ transform = Transform3D(1, 0, 0, 0, 0.9922756, 0.12405175, 0, -0.12405175, 0.992
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D/CameraTarget" unique_id=950305355]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 script = ExtResource("3_qhqgy")
+
+[connection signal="set_player_target" from="CameraPivot/SpringArm3D/CameraTarget/Camera3D" to="." method="_on_camera_3d_set_player_target"]

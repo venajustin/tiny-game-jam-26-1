@@ -6,6 +6,7 @@ extends Camera3D
 @export var highlight_threshhold = 100.0
 
 signal highlight_outlet(show:bool, screen_pos:Vector2)
+signal set_player_target(new_target:Node3D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,7 +43,6 @@ func _process(delta: float) -> void:
 		
 		if result:
 			if result.collider == outlet:
-				print(notifier.is_on_screen())
 				if notifier.is_on_screen() and abs((projection - screen_center).length()) < highlight_threshhold:
 					if closest == null or abs((projection - screen_center).length()) < abs((closest_pos - screen_center).length()):
 						closest = outlet
@@ -51,7 +51,10 @@ func _process(delta: float) -> void:
 		
 	if closest != null:
 		highlight_outlet.emit(true, closest_pos)
+		set_player_target.emit(closest)
 	else:
 		highlight_outlet.emit(false, Vector2(0,0))
+		set_player_target.emit(null)
+
 
 	

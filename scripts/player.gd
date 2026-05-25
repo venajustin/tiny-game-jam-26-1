@@ -47,6 +47,8 @@ var connected := false
 var powered := false
 var stopped_timer := 0.0
 
+var current_target = null
+
 var bend_count := 0
 
 signal display_crosshair(yes:bool)
@@ -205,14 +207,19 @@ func _unhandled_input(event: InputEvent):
 
 func fire_cable():
 	if not connected:
+			
 		var screen_size := get_viewport().get_visible_rect().size
 		var screen_center := screen_size / 2
 		var origin := cam.project_ray_origin(screen_center)
 		var direction := cam.project_ray_normal(screen_center)
 		var end := origin + direction * ray_length
+		
+		
+		if current_target != null:
+			end = current_target.global_position
+
 		var query := PhysicsRayQueryParameters3D.create(origin, end)
 		query.exclude = [self]
-		
 		var space_state := get_world_3d().direct_space_state
 		var result := space_state.intersect_ray(query)
 		
@@ -276,3 +283,8 @@ func remove_cable_linkage() -> bool:
 	active_conn_point = active_plug.find_child("wire_connection")
 
 	return true
+	
+
+
+func _on_camera_3d_set_player_target(new_target: Node3D) -> void:
+	current_target = new_target
