@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://u3a6lsn8r7gn"]
+
+[ext_resource type="PackedScene" uid="uid://c3wp120mj1i2k" path="res://Assets/Dust Bunies_anims.glb" id="1_2vfmg"]
+
+[node name="Dust Bunies_anims" unique_id=1657172937 instance=ExtResource("1_2vfmg")]
+
+[node name="Skeleton3D" parent="Export Rig" parent_id_path=PackedInt32Array(1180270251) index="0" unique_id=2080940761]
+bones/0/rotation = Quaternion(-0.10383572, 1.18565076e-07, 0.0001885636, 0.99459445)
+bones/0/scale = Vector3(1.0571926, 0.89472914, 1.0571928)
