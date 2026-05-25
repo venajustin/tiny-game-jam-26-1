@@ -336,4 +336,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9922756, 0.12405175, 0, -0.12405175, 0.992
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 script = ExtResource("3_qhqgy")
 
+[node name="Timer" type="Timer" parent="." unique_id=1182195004]
+
 [connection signal="set_player_target" from="CameraPivot/SpringArm3D/CameraTarget/Camera3D" to="." method="_on_camera_3d_set_player_target"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

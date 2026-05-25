@@ -26,6 +26,7 @@ const MOUSE_SENSITIVITY = -.003
 @onready var connpoint = find_child("ConnectionPoint")
 @onready var model_vac_core = $"Vacum-2/Cube_001"
 @onready var spring_arm = $CameraPivot/SpringArm3D
+@onready var timer = $Timer
 
 var backing_up := false
 var breaking = false
@@ -53,6 +54,7 @@ var bend_count := 0
 
 signal display_crosshair(yes:bool)
 signal set_controls_mode(primary_controls: bool)
+signal set_game_time(time:float)
 
 #var camera_cart_speed := cam_cart_max_speed
 #var cam_cart_max_speed := 30.0
@@ -62,8 +64,10 @@ func _ready():
 	tilt_angle_start = model_vac_core.rotation.x
 	display_crosshair.emit(true)
 	spring_arm.add_excluded_object(self)
+	timer.start(90)
 
 func _physics_process(delta: float) -> void:
+	set_game_time.emit(timer.time_left)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -133,15 +137,16 @@ func _physics_process(delta: float) -> void:
 		
 		# powered = true # quick override
 		if powered:
-			if is_on_floor():
-				# boost
-				if velocity.dot(vac_dir) < boost_dir.dot(vac_dir) * boost_speed:
-					velocity -= vac_dir * velocity.dot(vac_dir) 
-					velocity += vac_dir * boost_dir.dot(vac_dir) * boost_speed
-			else:
-				if velocity.dot(boost_dir) < boost_speed:
-					velocity -= velocity.dot(boost_dir) * boost_dir 
-					velocity += boost_dir * boost_speed
+			velocity += vac_dir * boost_dir.dot(vac_dir) * boost_speed * delta
+			#if is_on_floor():
+				## boost
+				#if velocity.dot(vac_dir) < boost_dir.dot(vac_dir) * boost_speed:
+					#velocity -= vac_dir * velocity.dot(vac_dir) 
+					#velocity += vac_dir * boost_dir.dot(vac_dir) * boost_speed
+			#else:
+				#if velocity.dot(boost_dir) < boost_speed:
+					#velocity -= velocity.dot(boost_dir) * boost_dir 
+					#velocity += boost_dir * boost_speed
 		
 		# Swinging
 		if velocity.dot(boost_dir) < 0:
@@ -292,3 +297,7 @@ func remove_cable_linkage() -> bool:
 
 func _on_camera_3d_set_player_target(new_target: Node3D) -> void:
 	current_target = new_target
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
