@@ -15,6 +15,19 @@ sky_material = SubResource("ProceduralSkyMaterial_3fkud")
 background_mode = 2
 sky = SubResource("Sky_kfcj1")
 tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+glow_bloom = 0.29
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 2.81
+fog_sun_scatter = 0.71
+fog_density = 0.0928
+fog_aerial_perspective = 1.0
+fog_depth_curve = 0.5743494
+fog_depth_begin = 5.0
+fog_depth_end = 512.4
+adjustment_enabled = true
 
 [node name="World" type="Node3D" unique_id=1713739871]
 
@@ -32,7 +45,7 @@ environment = SubResource("Environment_oh5ts")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41959572, 3.7673588, -0.45244408)
 world = NodePath("..")
 
-[node name="Map1" parent="." unique_id=709591845 instance=ExtResource("2_ba2of")]
+[node name="Map1" parent="." unique_id=950480784 instance=ExtResource("2_ba2of")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.369282, -4.202141, -2.1322708)
 
 [node name="outlet" parent="." unique_id=1398382156 instance=ExtResource("3_gvald")]
