@@ -17,7 +17,8 @@ func _ready() -> void:
 	high.visible = false
 	player.connect("set_game_time", on_player_set_time)
 	player.connect("set_bunny_count", on_set_bunny_count)
-
+	$LoseScreen.visible = false
+	$WinScreen.visible = false
 
 func set_primary():
 	secondary_cont.visible = false
@@ -44,7 +45,12 @@ func on_highlight_object(show:bool, location:Vector2):
 		high.visible = false
 	
 func on_player_set_time(time):
-	$Control2/TimeLabel.text = str(int(floor(time / 60))) + ":" + str(int(floor(time)) % 60)
+	if not $WinScreen.visible and not $LoseScreen.visible:
+		$Control2/TimeLabel.text = str(int(floor(time / 60))) + ":" + str(int(floor(time)) % 60)
+	if time <= 0.0001:
+		$LoseScreen.visible = true
 
 func on_set_bunny_count(bunnyCount):
 	$Control2/BunnyCount.text = str(bunnyCount)
+	if bunnyCount >= 22:
+		$WinScreen.visible = true

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c5hpb6tiak747" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://c8515p0fysyh7" path="res://Assets/textures/Circle Graphic.png" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://ckifwnkv8870u" path="res://Assets/textures/You Lose Screen.png" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://d2ndb730yjfau" path="res://Assets/Menu Screen.png" id="4_gdt2y"]
 
 [node name="UI" type="Control" unique_id=982584726]
 layout_mode = 3
@@ -175,6 +177,37 @@ offset_right = 19.0
 offset_bottom = 19.0
 texture = ExtResource("2_x4jx1")
 expand_mode = 1
+
+[node name="LoseScreen" type="TextureRect" parent="." unique_id=301124526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yev5y")
+
+[node name="WinScreen" type="TextureRect" parent="." unique_id=958153199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.5
+offset_top = -64.5
+offset_right = 203.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gdt2y")
+
+[node name="Label" type="Label" parent="WinScreen" unique_id=862032862]
+layout_mode = 0
+offset_left = 496.50006
+offset_top = 69.500015
+offset_right = 580.50006
+offset_bottom = 92.500015
+scale = Vector2(1.0047195, 1.0308276)
+text = "You WIN!!!!"
 
 [node name="Control2" type="Control" parent="." unique_id=1121435566]
 anchors_preset = 0
