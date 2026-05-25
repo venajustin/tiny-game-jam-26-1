@@ -277,35 +277,3 @@ world = NodePath("..")
 
 [node name="Map1" parent="." unique_id=695351404 instance=ExtResource("2_ba2of")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.369282, -4.202141, -2.1322708)
-
-[node name="outlet" parent="." unique_id=1398382156 instance=ExtResource("3_gvald")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3945732, -1.984973, -18.923122)
-visible = false
-
-[node name="Dust Bunies_anims" type="Node3D" parent="." unique_id=1657172937]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -3.8892078, -28.086262)
-
-[node name="Export Rig" type="Node3D" parent="Dust Bunies_anims" unique_id=1180270251]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0441, 0.10321289, 0)
-
-[node name="Skeleton3D" type="Skeleton3D" parent="Dust Bunies_anims/Export Rig" unique_id=2080940761]
-bones/0/name = "Bone.001"
-bones/0/parent = -1
-bones/0/rest = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 0, -0.011097759, 0)
-bones/0/enabled = true
-bones/0/position = Vector3(0, -0.011097759, 0)
-bones/0/rotation = Quaternion(-0.08387807, 1.18847765e-07, 0.00015232104, 0.99647605)
-bones/0/scale = Vector3(0.95107585, 1.1055274, 0.95107603)
-
-[node name="Cube" type="MeshInstance3D" parent="Dust Bunies_anims/Export Rig/Skeleton3D" unique_id=626617136]
-mesh = SubResource("ArrayMesh_80e3x")
-skin = SubResource("Skin_6kly1")
-skeleton = NodePath("..")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dust Bunies_anims" unique_id=1092787128]
-libraries/ = SubResource("AnimationLibrary_fgb5r")
-
-[node name="AnimationTree" type="AnimationTree" parent="Dust Bunies_anims" unique_id=1712472482]
-tree_root = SubResource("AnimationNodeBlendTree_7f8xf")
-anim_player = NodePath("../AnimationPlayer")
-parameters/TimeSeek/seek_request = -1.0
