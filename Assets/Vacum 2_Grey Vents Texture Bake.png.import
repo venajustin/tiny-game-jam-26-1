@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxndjmedgly0s"
-path.s3tc="res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"
+uid="uid://fs4doptkfgqq"
+path.s3tc="res://.godot/imported/Vacum 2_Grey Vents Texture Bake.png-cc5b58504e65156a9c62767b7a98604f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8e3b3993b80407d4e1fbdefb308ce708"
+}
 
 [deps]
 
-source_file="res://Assets/textures/Grey Vents Texture Bake.png"
-dest_files=["res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"]
+source_file="res://Assets/Vacum 2_Grey Vents Texture Bake.png"
+dest_files=["res://.godot/imported/Vacum 2_Grey Vents Texture Bake.png-cc5b58504e65156a9c62767b7a98604f.s3tc.ctex"]
 
 [params]
 

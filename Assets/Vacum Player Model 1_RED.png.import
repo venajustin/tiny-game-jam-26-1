@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxndjmedgly0s"
-path.s3tc="res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"
+uid="uid://cebwcgejr6mqx"
+path.s3tc="res://.godot/imported/Vacum Player Model 1_RED.png-e7fa62ce8b5e515249e86db6486ac369.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "073078a1531f7d5d08ec26f0cc79b47c"
+}
 
 [deps]
 
-source_file="res://Assets/textures/Grey Vents Texture Bake.png"
-dest_files=["res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"]
+source_file="res://Assets/Vacum Player Model 1_RED.png"
+dest_files=["res://.godot/imported/Vacum Player Model 1_RED.png-e7fa62ce8b5e515249e86db6486ac369.s3tc.ctex"]
 
 [params]
 

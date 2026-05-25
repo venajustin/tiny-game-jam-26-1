@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxndjmedgly0s"
-path.s3tc="res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"
+uid="uid://0031eg40eajt"
+path.s3tc="res://.godot/imported/Vacum 2_Racing Vacum Head Texture.png-53b266533f7f71499bd3309fb96558db.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "11a9b824c980d7330976b7d185c3bee3"
+}
 
 [deps]
 
-source_file="res://Assets/textures/Grey Vents Texture Bake.png"
-dest_files=["res://.godot/imported/Grey Vents Texture Bake.png-f7dfb890b8c7e78ba11ddc6c0e1796b7.s3tc.ctex"]
+source_file="res://Assets/Vacum 2_Racing Vacum Head Texture.png"
+dest_files=["res://.godot/imported/Vacum 2_Racing Vacum Head Texture.png-53b266533f7f71499bd3309fb96558db.s3tc.ctex"]
 
 [params]
 
