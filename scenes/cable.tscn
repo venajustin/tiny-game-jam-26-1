@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dk1w3meb2psco"]
 
+[ext_resource type="Script" uid="uid://bn05mg5t3gmk5" path="res://scenes/cable.gd" id="1_rj3a4"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jly48"]
 albedo_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
 roughness = 0.75
@@ -9,7 +11,10 @@ material = SubResource("StandardMaterial3D_jly48")
 height = 1.0
 
 [node name="Cable" type="Node3D" unique_id=1774252284]
+script = ExtResource("1_rj3a4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=579991817]
 transform = Transform3D(0.25, 0, 0, 0, -4.371139e-08, 0.25, 0, -1, -1.0927847e-08, 0, 0, -0.5)
 mesh = SubResource("CylinderMesh_rj3a4")
+
+[node name="wire_connection" type="Marker3D" parent="." unique_id=1130387402]

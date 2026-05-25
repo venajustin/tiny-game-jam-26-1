@@ -40,10 +40,13 @@ var point_dir := 0.0
 var active_plug = null
 var active_cable = null
 var active_conn_point = null
+var last_bend_norm = null
 
 var connected := false
 var powered := false
 var stopped_timer := 0.0
+
+var bend_count := 0
 
 signal display_crosshair(yes:bool)
 
@@ -63,7 +66,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		# friction
 		velocity = velocity.move_toward(Vector3(0,0,0), delta * FLOOR_FRICTION)
-	
 	
 	var move_input = Input.get_axis("back", "forward")
 	var turn_input = Input.get_axis("right","left")
@@ -153,18 +155,36 @@ func _physics_process(delta: float) -> void:
 		# Swinging
 		if velocity.dot(boost_dir) < 0:
 			velocity -= velocity.dot(boost_dir) * boost_dir
-			
-	
-	
 	
 	if connected:
 		active_cable.look_at(active_conn_point.global_position)
 		active_cable.scale.z = (active_conn_point.global_position - active_cable.global_position).length()
-
-	
+		if last_bend_norm != null and bend_count > 0:
+			check_cable_release()
+		check_cable_intersections()
+		
 	
 	move_and_slide()
 
+func check_cable_intersections():
+	
+	var origin = active_cable.global_position
+	var end = active_conn_point.global_position
+	var query := PhysicsRayQueryParameters3D.create(origin, end)
+	query.exclude = [self]
+	
+	var space_state := get_world_3d().direct_space_state
+	var result := space_state.intersect_ray(query)
+	
+	if result:
+		last_bend_norm = result.normal
+		new_cable_linkage(result.position)
+	
+
+func check_cable_release():
+	var dir = (active_cable.global_position - active_conn_point.global_position ).normalized()
+	if last_bend_norm.dot(dir) > 0:
+		remove_cable_linkage()
 
 
 func _unhandled_input(event: InputEvent):
@@ -190,7 +210,8 @@ func _unhandled_input(event: InputEvent):
 		
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
-	
+	if event.is_action_pressed("ui_left"):
+		remove_cable_linkage()
 
 func fire_cable():
 	if not connected:
@@ -213,6 +234,8 @@ func fire_cable():
 			create_cable(result.position, result.normal)
 			print("Hit object: ", result.collider.name)
 	else:
+		while active_plug.name == "Cable":
+			remove_cable_linkage()
 		active_plug.queue_free()
 		active_cable.queue_free()
 		active_conn_point = null
@@ -225,13 +248,37 @@ func create_cable(pos:Vector3, norm:Vector3):
 	nplug.look_at(nplug.global_position - norm, Vector3.UP)
 	connected = true
 	active_plug = nplug
+	active_conn_point = nplug.find_child("wire_connection")
 	
 	var ncable:Node3D = cable_scene.instantiate()
 	connpoint.add_child(ncable)
-	ncable.look_at(nplug.position)
-	ncable.scale.z = (nplug.position - ncable.position).length()
 	active_cable = ncable
-	active_conn_point = nplug.find_child("wire_connection")
 	
+func new_cable_linkage(point:Vector3):
+	active_cable.reparent(world)
+	active_cable.position = point
+	active_cable.add_pivot(active_plug, last_bend_norm)
 	
+	active_plug = active_cable
+	active_conn_point = active_cable.find_child("wire_connection")
 	
+	var ncable:Node3D = cable_scene.instantiate()
+	connpoint.add_child(ncable)
+	active_cable = ncable
+	bend_count+= 1
+
+func remove_cable_linkage() -> bool:
+	if active_plug.name != "Cable":
+		return false
+
+	var old_cable = active_cable
+	old_cable.queue_free()
+
+	active_cable = active_plug
+	active_cable.reparent(connpoint)
+	last_bend_norm = active_cable.get_last_bend()
+	active_plug = active_cable.remove_pivot()
+	bend_count-= 1
+	active_conn_point = active_plug.find_child("wire_connection")
+
+	return true
