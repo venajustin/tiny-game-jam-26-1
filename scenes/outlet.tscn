@@ -36,5 +36,5 @@ visible = false
 mesh = SubResource("BoxMesh_t6mlt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1877172542]
-transform = Transform3D(0.98117375, 0, 0, 0, 0.98117375, 0, 0, 0, 0.98117375, -0.0015248805, 0, -0.008399904)
+transform = Transform3D(2.7425318, 0, 0, 0, 0.5836011, 0, 0, 0, 13.944827, -0.02298911, 0, -0.008399904)
 shape = SubResource("BoxShape3D_eamx6")
